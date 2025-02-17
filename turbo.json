@@ -1,0 +1,43 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "remoteCache": {
+    "enabled": true,
+    "timeout": 120
+  },
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "test": {
+      "dependsOn": ["^test"]
+    },
+    "test:coverage": {
+      "dependsOn": ["^test:coverage"]
+    },
+    "format": {
+      "dependsOn": ["^format"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "sonar": {
+      "dependsOn": ["^sonar"]
+    },
+    "codeql-run-analysis": {
+      "dependsOn": ["^codeql-run-analysis"]
+    },
+    "codeql-upload-result": {
+      "dependsOn": ["^codeql-upload-result"]
+    }
+  }
+}
