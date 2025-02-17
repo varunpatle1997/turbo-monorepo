@@ -1,0 +1,22 @@
+{
+  "packages": [
+    "apps/frontend/**",
+    "packages/**"
+  ],
+  "dependencyTypes": ["prod", "dev", "peer", "local"],
+  "versionGroups": [
+    {
+      "label": "Internal Packages",
+      "dependencies": [
+        "@repo/**"
+      ],
+      "packages": ["**"],
+      "specifierTypes": ["workspace-protocol"]
+    },
+    {
+      "label": "General Dependencies",
+      "dependencies": ["**"],
+      "packages": ["**"]
+    }
+  ]
+}

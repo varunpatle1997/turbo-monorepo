@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vue-tsc -b && vite build",
+    "build": "vue-tsc -b tsconfig.app.json && vite build",
     "check-types": "tsc --noEmit",
     "codeql-run-analysis": "codeql database create ./codeql-database --language=javascript-typescript --source-root=. --overwrite && codeql database analyze ./codeql-database codeql/javascript-queries:codeql-suites/javascript-code-scanning.qls --format=sarif-latest --output=./codeql-database/my-app.sarif --sarif-category=my-app --threads=0 --sarif-add-baseline-file-info --verbose",
     "codeql-upload-result": "codeql github upload-results --sarif=./codeql-database/my-app.sarif --github-url=https://github.com/ --repository=${GITHUB_REPOSITORY} --ref=${GITHUB_REF} --commit=${GITHUB_SHA}",
@@ -29,7 +29,7 @@
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "zod": "^3.24.1"  
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

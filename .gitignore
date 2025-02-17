@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Local env files
+**/*.env
+
+# Don't ignore env examples
+!**/*.env.example
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Misc
+.DS_Store
+**/.DS_Store
+*.pem
+
+# Build outputs
+**/out-tsc
+**/dist
+**/build
+**/node_modules
+
+# Turborepo cache
+**/.turbo
+**/.cache
+
+# SonarQube & CodeQL
+**/.sonar
+**/.scannerwork
+**/codeql-database
+
+# Ignore editor files
+**/.vscode
+
+# Ignore log files
+**/*.log
+**/logs/**
